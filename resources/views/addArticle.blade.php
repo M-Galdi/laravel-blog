@@ -4,7 +4,7 @@
     <div class="container mt-2 ">
         <h1 class=" mt-4 text-center">Add Article</h1>
         <div class="col-8 ">
-            <form action="/articles" method="post" enctype="multipart/form-data">
+            <form action="{{route('articles.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title:</label>

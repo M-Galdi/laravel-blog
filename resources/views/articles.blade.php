@@ -1,22 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+
     <div class="text-center">
-        <a href="articles/create">
+        <a href="{{ route('articles.create') }}">
             <button class="btn btn-success mt-5">Add Article</button>
         </a>
     </div>
-
-
-
-
-    {{-- @php
-        $var = '<strong> text </strong>'
-    @endphp
-
-    <div>
-        {!!$var!!}
-    </div> --}}
 
     <div class="container   justify-content-between   text-center mt-5">
         <div class="row ">
@@ -56,17 +47,19 @@
 
                         <div class="container d-flex justify-content-center align-items-center">
                             <div class="col-2">
-                                <form action="{{ route('articles.show', ['article' => $article]) }}" method='get'>
-                                    @csrf
-                                    <button type="submit" href="#" class="btn btn-info m-1">show</button>
-                                </form>
+                                <div class="text-center">
+                                    <a href="{{ route('articles.show', ['article' => $article->id]) }}">
+                                        <button class="btn btn-info m-1">Show</button>
+                                    </a>
+                                </div>
                             </div>
 
                             <div class="col-2">
-                                <form action="{{ route('articles.edit', ['article' => $article->id]) }}" method='get'>
-                                    @csrf
-                                    <button type="submit" href="#" class="btn btn-warning m-1">Edit</button>
-                                </form>
+                                <div class="text-center">
+                                    <a href="{{ route('articles.edit', ['article' => $article->id]) }}">
+                                        <button class="btn btn-warning m-1">Edit</button>
+                                    </a>
+                                </div>
                             </div>
 
                             <div class="col-2">
@@ -89,5 +82,15 @@
             {{ $articles->links() }}
         </div>
     </div>
+
+
+    
+    {{-- @php
+        $var = '<strong> text </strong>'
+    @endphp
+
+    <div>
+        {!!$var!!}
+    </div> --}}
 
 @endsection
