@@ -18,7 +18,6 @@
                 </div>
             </form>
 
-
             @forelse($articles as $article)
                 <div class="card col-5 mx-auto my-2">
                     <div class="card-header">
@@ -48,6 +47,7 @@
                         <div class="container d-flex justify-content-center align-items-center">
                             <div class="col-2">
                                 <div class="text-center">
+                                    {{-- <a href="/articles/{{ $article->id }}"> --}}
                                     <a href="{{ route('articles.show', ['article' => $article->id]) }}">
                                         <button class="btn btn-info m-1">Show</button>
                                     </a>
@@ -84,7 +84,7 @@
     </div>
 
 
-    
+
     {{-- @php
         $var = '<strong> text </strong>'
     @endphp

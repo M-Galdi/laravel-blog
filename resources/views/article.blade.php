@@ -57,6 +57,7 @@
                     </button>
                 </form>
                 <div>
+                    {{-- {{dd($article)}} --}}
                     @forelse ($article->comments as $comment)
                         <div class=" align-items-center">
                             <div class="d-flex shadow m-3 p-3 bg-white rounded  ">

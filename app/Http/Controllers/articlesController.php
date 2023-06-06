@@ -49,23 +49,16 @@ class articlesController extends Controller
         $article->title = $request->input('title');
         $article->content = $request->input('content');
 
-
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $path = $image->store('images');
             $article->image = $path;
         }
 
-
-
-
-
         $article->save();
 
         $categories = $request->input('categories');
         $article->categories()->attach($categories);
-
-        // ...
 
         return redirect()->route('articles.index');
     }
@@ -114,22 +107,16 @@ class articlesController extends Controller
         $article->title = $request->title;
         $article->content = $request->content;
 
-
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $path = $image->store('images');
             $article->image = $path;
         }
 
-
-
         $article->save();
 
         $categories = $request->input('categories');
-
         $article->categories()->sync($categories);
-
-
 
         return redirect()->route('articles.index');
     }

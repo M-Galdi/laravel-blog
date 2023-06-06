@@ -13,5 +13,5 @@ class category extends Model
     {
         return $this->belongsToMany(Article::class);
     }
-    
+
 }
